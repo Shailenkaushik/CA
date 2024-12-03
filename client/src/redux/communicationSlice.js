@@ -10,7 +10,7 @@ export const logCommunication = createAsyncThunk(
         const responses = await Promise.all(
             selectedCompanies.map(async (companyId) => {
             const response = await axios.post(
-              "http://localhost:8800/api/user/logCommunication",
+              "https://ca-vq94.onrender.com/api/user/logCommunication",
               { companyId, ...communicationDetails }
             );
             return response.data;
