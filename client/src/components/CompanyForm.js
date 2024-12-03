@@ -48,10 +48,10 @@ const CompanyForm = ({ onClose, company }) => {
     try {
       if (company) {
         // Update an existing company
-        await axios.put(`http://localhost:8800/api/admin/${company._id}`, formData);
+        await axios.put(`https://ca-vq94.onrender.com/api/admin/${company._id}`, formData);
       } else {
         // Add a new company
-        await axios.post("http://localhost:8800/api/admin/addCompany", formData);
+        await axios.post("https://ca-vq94.onrender.com/api/admin/addCompany", formData);
       }
       window.location.reload();
       onClose();
