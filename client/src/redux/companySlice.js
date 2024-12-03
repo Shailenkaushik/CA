@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Async thunk to fetch companies
 export const fetchCompanies = createAsyncThunk("companies/fetch", async () => {
-  const response = await axios.get("http://localhost:8800/api/admin/getCompanies");
+  const response = await axios.get("https://ca-vq94.onrender.com/api/admin/getCompanies");
 
   return response.data.map((company) => {
     const lastCommunication = company.communications.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
@@ -30,12 +30,12 @@ export const fetchCompanies = createAsyncThunk("companies/fetch", async () => {
 
 // Async thunk to delete a company
 export const deleteCompany = createAsyncThunk("companies/delete", async (companyId) => {
-  await axios.delete(`http://localhost:8800/api/admin/${companyId}`);
+  await axios.delete(`https://ca-vq94.onrender.com/api/admin/${companyId}`);
   return companyId; 
 });
 
 export const updateCompany = createAsyncThunk("companies/update", async ({ id, updatedData }) => {
-  const response = await axios.put(`http://localhost:8800/api/admin/${id}`, updatedData);
+  const response = await axios.put(`https://ca-vq94.onrender.com/api/admin/${id}`, updatedData);
   return response.data; 
 });
 
