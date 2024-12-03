@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchNotifications = createAsyncThunk("notifications/fetch", async () => {
   
-  const response = await axios.get("http://localhost:8800/api/notifications");
+  const response = await axios.get("https://ca-vq94.onrender.com/api/notifications");
   console.log(response.data);   
   return response.data;
 });
